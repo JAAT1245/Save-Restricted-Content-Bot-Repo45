@@ -26,9 +26,9 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 logging.getLogger("telethon").setLevel(logging.WARNING)
 
-MONGODB_CONNECTION_STRING = "mongodb+srv://ggn:ggn@ggn.upuljx5.mongodb.net/?retryWrites=true&w=majority&appName=ggn"
-OWNER_ID = 7065117445 # edit this
-LOG_GROUP = -1001878947221 # edit this
+MONGODB_CONNECTION_STRING = "mongodb+srv://t25821653:sUUQp5IhqoRDlwEj@cluster0.jrwf82r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+OWNER_ID = 1280494242 # edit this
+LOG_GROUP = -100220036844 # edit this
 
 # MongoDB database name and collection name
 DB_NAME = "authors"
@@ -178,8 +178,8 @@ async def _batch(event):
             _range = await conv.get_reply()
             try:
                 value = int(_range.text)
-                if value > 1000:
-                    return await conv.send_message("You can only get upto 1000 files in a single batch...")
+                if value > 100:
+                    return await conv.send_message("You can only get upto 100 files in a single batch...")
             except ValueError:
                 return await conv.send_message("Range must be an integer!")
 
@@ -195,7 +195,7 @@ async def _batch(event):
             save_batch_data(batch_data)
 
             cd = await conv.send_message("**Batch process ongoing...**\n\nChunks processed: 0", 
-                                    buttons=[[Button.url("Join Channel", url="http://t.me/devggn")]])
+                                    buttons=[[Button.url("Join Channel", url="https://t.me/+055Dfay4AsNjYWE1")]])
             co, is_canceled = await run_batch(userbot, Bot, user_id, cd, _link) 
             try: 
                 if co == -2:
@@ -379,11 +379,11 @@ async def run_batch(userbot, client, sender, countdown, link):
                         logger.info(e)
                         if countdown.text != count_down:
                             await countdown.edit(count_down,
-                                                 buttons=[[Button.url("Join Channel", url="http://t.me/devggn")]])
+                                                 buttons=[[Button.url("Join Channel", url="https://t.me/+055Dfay4AsNjYWE1")]])
             except Exception as e:
                 if countdown.text != count_down:
                     await countdown.edit(count_down,
-                                         buttons=[[Button.url("Join Channel", url="https://t.me/devggn")]])
+                                         buttons=[[Button.url("Join Channel", url="https://t.me/+055Dfay4AsNjYWE1")]])
 
         # Wait for all tasks in the chunk to complete
         await asyncio.gather(*chunk_tasks[str(sender)])
@@ -394,7 +394,7 @@ async def run_batch(userbot, client, sender, countdown, link):
             sleep_message = f"Sleeping for {current_timer} seconds before processing the next batch."
             sleep_msg = await client.send_message(sender, sleep_message)
             # Edit countdown message to show processed value only
-            await countdown.edit(f"**Batch process ongoing...**\n\nProcessed: {processed_ids} Links", buttons=[[Button.url("Join Channel", url="http://t.me/devggn")]])
+            await countdown.edit(f"**Batch process ongoing...**\n\nProcessed: {processed_ids} Links", buttons=[[Button.url("Join Channel", url="https://t.me/+055Dfay4AsNjYWE1")]])
 
             try:
                 await asyncio.sleep(current_timer)  # Sleep for the current timer value
@@ -428,7 +428,7 @@ async def download_and_unzip(user_id, bot_token, session, event):
         zip_ref.extractall(user_folder)
 
     init_file_content = f"""
-#Join @devggn
+
 
 from pyrogram import Client
 from telethon.sessions import StringSession
@@ -446,8 +446,8 @@ API_ID = "19748984" #config("API_ID", default=None, cast=int)
 API_HASH = "2141e30f96dfbd8c46fbb5ff4b197004" #config("API_HASH", default=None)
 BOT_TOKEN = "{bot_token}"
 SESSION = "{session}"
-FORCESUB = "save_restricted_content_bots" #config("FORCESUB", default=None)
-AUTH = "6964148334" #config("AUTH", default=None)
+FORCESUB = "ldc2024_rsmssbrajasthan" #config("FORCESUB", default=None)
+AUTH = "1280494242" #config("AUTH", default=None)
 SUDO_USERS = []
 
 if len(AUTH) != 0:
@@ -466,7 +466,7 @@ userbot = Client("myacc",api_id=API_ID,api_hash=API_HASH,session_string=SESSION)
 try:
     userbot.start()
 except BaseException:
-    print("Your session expired please re add that... thanks @devggn.")
+    print("Your session expired please re add that... Use @Pyrogram_session_genetrator_bot to get your session")
     sys.exit(1)
 
 Bot = Client(
@@ -479,8 +479,8 @@ Bot = Client(
 try:
     Bot.start()
 except Exception as e:
-    #print(e)
-    #logger.info(e)
+    print(e)
+    logger.info(e)
     sys.exit(1)
 """
 
@@ -733,7 +733,7 @@ async def save_file(_, message):
         os.remove(file_path)
     else:
         # If the replied message does not contain any media, inform the user
-        await message.reply_text("Please reply to a message containing media to save it.")
+        await app.send_message('me', "Please reply to a message containing media to save it.")
 
 # Start the client
 app.run()
