@@ -24,9 +24,9 @@ from main.plugins.helpers import screenshot
 from pyrogram import Client, filters
 import subprocess
 
-MONGODB_CONNECTION_STRING = "mongodb+srv://ggn:ggn@ggn.upuljx5.mongodb.net/?retryWrites=true&w=majority&appName=ggn"
-OWNER_ID = 7065117445 # edit this
-LOG_GROUP = -1001878947221 # edit this
+MONGODB_CONNECTION_STRING = "mongodb+srv://t25821653:sUUQp5IhqoRDlwEj@cluster0.jrwf82r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+OWNER_ID = 1280494242 # edit this
+LOG_GROUP = -1002200368445 # edit this
 
 # MongoDB database name and collection name
 DB_NAME = "start_users"
@@ -61,8 +61,8 @@ async def start(event):
     collection.update_one({"user_id": user_id}, {"$set": {"user_id": user_id}}, upsert=True)
     # Creating inline keyboard with one button
     buttons = [
-        [Button.url("Join Channel", url="https://t.me/devggn")],
-        [Button.url("Contact Me", url="https://t.me/ggnhere")],
+        [Button.url("Join Channel", url="https://t.me/+055Dfay4AsNjYWE1")],
+        [Button.url("Contact Me", url="https://t.me/mr_mahiji")],
     ]
     # Sending photo with caption and buttons
     await gagan.send_file(
@@ -137,7 +137,7 @@ async def get_registered_users_command(event):
     os.remove(filename)  # Remove the temporary file after sending
 
 S = "/start"
-START_PIC = "https://graph.org/file/1dfb96bd8f00a7c05f164.gif"
+START_PIC = "https://graph.org/file/e9630a562338f6c374be5.jpg"
 TEXT = "Send me the Link of any message of Restricted Channels to Clone it here.\nFor private channel's messages, send the Invite Link first.\n\n👉🏻 Execute /batch for bulk process upto 10K files range."
 
 @gagan.on(events.NewMessage(func=lambda event: event.photo))
@@ -177,7 +177,7 @@ PRE_TEXT = """💰 **Premium Price**: Starting from $2 or 200 INR accepted via *
 async def plan_command(event):
     # Creating inline keyboard with buttons
     buttons = [
-        [Button.url("Send Gift Card Code", url="https://t.me/ttonehelpbot")]
+        [Button.url("Send Gift Card Code", url="https://t.me/mr_mahiji")]
     ]
 
     # Sending photo with caption and buttons
@@ -192,16 +192,16 @@ T = "/terms"
 TERM_PIC = "term.png"
 TERM_TEXT = """📜 **Terms and Conditions** 📜\n
 ✨ We are not responsible for user deeds, and we do not promote copyrighted content. If any user engages in such activities, it is solely their responsibility.
-✨ Upon purchase, we do not guarantee the uptime, downtime, or the validity of the plan. __Authorization and banning of users are at our discretion; we reserve the right to ban or authorize users at any time.__
-✨ Payment to us **__does not guarantee__** authorization for the /batch command. All decisions regarding authorization are made at our discretion and mood.
+✨ __Authorization and banning of users are at our discretion; We reserve the right to ban or authorize users depending on their actions.__
+✨ If you use the bot in 18+ content **__you'll be banned forever__** without any notice
 """
 
 @gagan.on(events.NewMessage(pattern=f"^{T}"))
 async def term_command(event):
     # Creating inline keyboard with buttons
     buttons = [
-        [Button.url("Query?", url="https://t.me/ttonehelpbot"),
-         Button.url("Channel", url="https://telegram.dog/devggn")]
+        [Button.url("Query?", url="https://t.me/mr_mahiji"),
+         Button.url("Channel", url="https://t.me/+055Dfay4AsNjYWE1")]
     ]
 
     # Sending photo with caption and buttons
@@ -212,7 +212,7 @@ async def term_command(event):
         buttons=buttons
     )
 
-REPO_URL = "https://github.com/devgaganin/Save-Restricted-Content-Bot-Repo/"
+REPO_URL = "https://github.com/"
 
 HELP_TEXT = """Here are the available commands:
 
@@ -350,7 +350,7 @@ async def youtube_dl_command(_, message):
 
             # Get video metadata
             metadata = video_metadata(original_file)
-            caption = f"{video_info['title']}\n\n__**Powered by [Advance Content Saver Bot](https://t.me/advance_content_saver_bot)**__"  # Set caption to the title of the video
+            caption = f"{video_info['title']}\n\n__**Powered by [MAHI Botz](https://t.me/+055Dfay4AsNjYWE1)"  # Set caption to the title of the video
             
             # Send the video file and thumbnail
             ggn = message.chat.id
