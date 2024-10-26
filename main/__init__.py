@@ -19,12 +19,12 @@ logging.getLogger("telethon").setLevel(logging.WARNING)
 
 uvloop.install()
 
-API_ID = config("API_ID", default=None, cast=int)
-API_HASH = config("API_HASH", default=None)
-BOT_TOKEN = config("BOT_TOKEN", default=None)
-SESSION = config("SESSION", default=None)
-FORCESUB = config("FORCESUB", default=None)
-AUTH = config("AUTH", default=None)
+API_ID = "24894984" config("API_ID", default=None, cast=int)
+API_HASH = "4956e23833905463efb588eb806f9804" config("API_HASH", default=None)
+BOT_TOKEN = "7601293855:AAG0J1lG04wfEnK9J1GnImfOWN7X_2wyaS4" config("BOT_TOKEN", default=None)
+SESSION = "BQDNvmIAc2pCfy2TNwMsVQLUU3GjqNuJlYYq_mjlI6P06s6bwaXavLJwzSpREBdv2ckEr8oy-ZAk5FDVLW9EWqpee2b98CWmUDu2xq8kMveTugmPun9Y19IFNTc7d78Tc5NzAtjusgPETXDuUyxP7TIF25HDD6MyzfoRMJMNQNa7jtdMKehOSYdxged-mdYluK7PecGD62AL9NIuaat5H91UAdL8qyNqYjNlkRzi-C0BKBGIIn_MeHiQRK12QKe6Bv8E4DFHxi5wKS2DGYpr1foaVxgHmibV7ly1rZ2e-_6y-5A7COhAUTQvNF0sCCfsei3mS7T1kVgSy2Kun4QfE5xgRAJDQwAAAAA1y9g-AA" config("SESSION", default=None)
+FORCESUB = "Targetallcourse" config("FORCESUB", default=None)
+AUTH = "902551614" config("AUTH", default=None)
 SUDO_USERS = []
 
 if len(AUTH) != 0:
