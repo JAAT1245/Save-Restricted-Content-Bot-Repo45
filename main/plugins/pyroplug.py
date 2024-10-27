@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger("telethon").setLevel(logging.INFO)
 
-MONGODB_CONNECTION_STRING = "mongodb+srv://Chenaram:Chenaram@2003@cluster0.czld6.mongodb.net/" #edit this
+MONGODB_CONNECTION_STRING = "mongodb+srv://crchoudharyji1122:Chenaram@2003@cluster0.cuje2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0" #edit this
 OWNER_ID = 4573949804 # edit this
 LOG_GROUP = -1002374822952 #edit this
 
